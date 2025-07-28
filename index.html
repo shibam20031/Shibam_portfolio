@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shibam Mondal Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      /* Particle JS Background */
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Premium cursor effects */
+      .cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(255, 189, 57, 0.5);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        mix-blend-mode: screen;
+        z-index: 9999;
+        transition: transform 0.1s ease;
+      }
+
+      .cursor-follower {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 189, 57, 0.2);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 9998;
+        transition: all 0.3s ease;
+      }
+
+      /* Navbar animation */
+      .navbar {
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.7) !important;
+      }
+
+      .navbar.scrolled {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Hero section animation */
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+        z-index: 1;
+      }
+
+      /*======================================
+      //--//-->   ABOUT
+      ======================================*/
+
+      .about-mf .box-shadow-full {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        transition: all 0.5s ease;
+      }
+
+      .about-mf .box-shadow-full:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .about-mf .about-img {
+        margin-bottom: 2rem;
+      }
+
+      .about-mf .about-img img {
+        margin-left: 10px;
+        transition: all 0.5s ease;
+        filter: grayscale(30%);
+      }
+
+      .about-mf .about-img img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+
+      .skill-mf .progress {
+        margin: .5rem 0 1.2rem 0;
+        border-radius: 0;
+        height: .7rem;
+        background: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+      }
+
+      .skill-mf .progress .progress-bar {
+        height: .7rem;
+        background-color: #ffbd39;
+        transition: width 1.5s ease-in-out;
+      }
+
+      /* Animation styles */
+      #typing-animation {
+        position: relative;
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3s steps(20, end) infinite;
+      }
+
+      #typing-animation:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #ccc;
+        animation: typing-cursor 0.5s ease-in-out infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes typing-cursor {
+        from {
+          width: 5px;
+        }
+        to {
+          width: 0;
+        }
+      }
+
+      /* project image zoom effect */
+      .zoom-effect {
+        overflow: hidden;
+        transition: all 0.5s ease;
+        position: relative;
+      }
+
+      .zoom-effect::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 189, 57, 0.3);
+        opacity: 0;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+
+      .zoom-effect:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .zoom-effect:hover::before {
+        opacity: 1;
+      }
+
+      /* Section headings animation */
+      .big {
+        position: relative;
+        display: inline-block;
+        font-size: 6rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.05);
+        z-index: -1;
+        transform: translateY(40px);
+        user-select: none;
+      }
+
+      .heading-section h2 {
+        position: relative;
+        display: inline-block;
+      }
+
+      .heading-section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: #ffbd39;
+        transition: width 0.5s ease;
+      }
+
+      .heading-section:hover h2::after {
+        width: 100%;
+      }
+
+      /* Resume item animation */
+      .resume-wrap {
+        position: relative;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        border-left: 3px solid transparent;
+      }
+
+      .resume-wrap:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.07);
+        border-left: 3px solid #ffbd39;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Contact form animation */
+      .box {
+        transition: all 0.5s ease;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .box:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.07);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .box .icon {
+        transition: all 0.5s ease;
+      }
+
+      .box:hover .icon {
+        transform: scale(1.2);
+        color: #ffbd39;
+      }
+
+      /* Floating animation */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* Button hover effect */
+      .btn-primary {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        z-index: -1;
+      }
+
+      .btn-primary:hover::before {
+        left: 0;
+      }
+
+      /* Social icons animation */
+      .ftco-footer-social li a {
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .ftco-footer-social li a:hover {
+        transform: translateY(-5px) scale(1.1);
+        color: #ffbd39 !important;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .big {
+          font-size: 4rem;
+        }
+        
+        #typing-animation {
+          font-size: 24px;
+        }
+        
+        .navbar {
+          backdrop-filter: none;
+        }
+      }
+
+      /* 3D card effect */
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
+      }
+
+      .card-3d:hover {
+        transform: rotateY(10deg) rotateX(5deg);
+      }
+
+      /* Glow effect */
+      .glow {
+        text-shadow: 0 0 10px rgba(255, 189, 57, 0.5);
+      }
+
+      /* Section reveal animation */
+      .section-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .section-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Shibam Mondal</a>
+        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav nav ml-auto">
+            <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+            <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+            <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+            <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <section id="home-section" class="hero">
+      <div id="particles-js"></div>
+      <div class="home-slider owl-carousel">
+        <div class="slider-item">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+              <div class="one-third js-fullheight order-md-last img floating" style="background-image:url(images/bg_1.png);">
+                <div class="overlay"></div>
+              </div>
+              <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <div class="text">
+                  <span class="subheading">Hello!</span>
+                  <h1 class="mb-4 mt-3">I'm <span class="glow">Shibam Mondal</span></h1>
+
+                  <!-- Element to contain animated typing -->
+                  <span id="typing-animation"></span>
+
+                  <script>
+                  // Initialize the typing animation
+                  const typingAnimationElement = document.getElementById('typing-animation');
+
+                  // Create an array of typing text
+                  const typingTexts = [
+                  'Engineer  ',
+                  ];
+
+                  // Create a function to display the typing animation for a given text
+                  function playTypingAnimation(text) {
+                  // Loop through each character and add it to the element
+                  for (let i = 0; i < text.length; i++) {
+                    setTimeout(() => {
+                    typingAnimationElement.textContent += text[i];
+                    }, i * 200); // Increase the delay to slow down the typing animation
+                  }
+
+                  // Once the animation is complete, reset the text and start over
+                  setTimeout(() => {
+                    typingAnimationElement.textContent = '';
+                    playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+                  }, text.length * 200);
+                  }
+
+                  // Start the typing animation loop
+                  playTypingAnimation(typingTexts[0]);
+                  </script>
+
+                  <br>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+      <div class="container section-reveal">
+        <div class="row">
+          <div class="row d-flex align-items-stretch">
+            <div class="col-md-6 col-lg-5 d-flex">
+              <div class="img-about img d-flex align-items-stretch card-3d">
+                <div class="overlay">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
+                      </div>
+                    </div>
+                    <!-- Details next to profile image -->
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p><span class="title-s">Name: </span> <span>Shibam Mondal</span></p>
+                        <p><span class="title-s">Job Role: </span> <span>Software Engineer</span></p>
+                        <p><span class="title-s">Address: </span> <span>West Bengal, India</span></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="skill-mf">
+                    <p class="title-s">Skills</p>
+                    <span>SQL</span> <span class="pull-right">95%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                    </div>
+                    
+                    <span>PYTHON</span> <span class="pull-right">85%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                    </div>
+                    
+                    <span>C</span> <span class="pull-right">50%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="90" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                    </div>
+                    
+                    <span>C++</span> <span class="pull-right">50%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="85" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                    </div>
+                    
+                    <span>Core Java</span> <span class="pull-right">70%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="80" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+              <div class="row justify-content-start pb-3">
+                <div class="col-md-12 heading-section ftco-animate">
+                  
+                  <h1 class="big big-2">About</h1>
+                  <h2 class="mb-4">About Me</h2>
+                  
+                  <p>I am a highly skilled and detail-oriented software developer with expertise in C, C++, Java, HTML, Python, and Visual Basic. With a strong foundation in programming and software development, I excel in creating efficient, scalable, and robust applications. My experience in embedded systems and cross-functional team collaboration allows me to tackle complex challenges with a structured and analytical approach.
+
+                    Passionate about coding and problem-solving, I continuously enhance my knowledge to stay updated with the latest technologies. Whether it's developing high-performance applications, designing user-friendly web interfaces, or working on system-level programming, I bring strong analytical thinking, excellent communication skills, and a results-driven mindset to every project.</p>
+                  <ul class="about-info mt-4 px-md-0 px-2">
+                    <li class="d-flex"><span>Profile:</span> <span>Software  &amp; Engineer</span></li>
+                    <li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering</span></li>
+                    <li class="d-flex"><span>Language:</span> <span>English, Hindi,Bengali</span></li>
+                    <li class="d-flex"><span>Other Skills:</span> <span>Virtual Basics</span></li>
+                    <li class="d-flex"><span>Interest:</span> <span>Traveling, Travel Photography</span></li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb" id="resume-section">
+      <div class="container">
+        <div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate section-reveal">
+            <h1 class="big big-2">Resume</h1>
+            <h2 class="mb-4">Resume</h2>
+            <p>I am a highly skilled and detail-oriented software developer with expertise in C, C++, Java, HTML, Python, and Visual Basic. With a strong foundation in programming and software development, I excel in creating efficient, scalable, and robust applications.</p>
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row section-reveal">
+          <h1 class="big-4">Education</h1>
+          <div class="underline"></div>
+        </div>
+        <br>
+        
+          <div class="row section-reveal">
+            <div class="col-md-6">
+              <div class="resume-wrap ftco-animate">
+                <span class="date">2021-2025</span>
+                <h2>Bachelor of Engineering</h2>
+                <span class="position">Techno International New Town</span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="resume-wrap ftco-animate">
+                <span class="date">2018-2019</span>
+                <h2>Higher Secondary School</h2>
+                <span class="position">Kendriya Vidyalaya Barrackpore Air Force Station</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-5 section-reveal">
+            <div class="col-md-6 text-center ftco-animate">
+              <p><a href="CV_SHIBAM.pdf" download="SampleCV" class="btn btn-primary py-4 px-5">Download CV</a></p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="ftco-section" id="project-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate section-reveal">
+            <h1 class="big big-2">Projects</h1>
+            <h2 class="mb-4">Projects</h2>
+            <p>Below are the sample Data Analytics projects on SQL, Python, Java Script, HTML,PHP.</p>
+          </div>
+        </div>
+        <div class="row d-flex section-reveal">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="https://github.com/shibam20031/jarvis/blob/master/main.py" class="block-20 zoom-effect" style="background-image: url('images/proj_1.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://github.com/shibam20031/jarvis/blob/master/main.py">JARVIS The Voice Assistant </a></h3>
+                <p>AI voice assistant prototype using python</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="https://spotofy.vercel.app/" class="block-20 zoom-effect" style="background-image: url('images/proj_2.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://github.com/shibam20031/spotofy/blob/main/index.html">Spotify clone </a></h3>
+                <p>Performed HTML,CSS,JAVASCRIPT used to create a copy of Spotify</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry">
+              <a href="https://github.com/shibam20031/AluminiRegistrationPrototype/blob/main/index.html" class="block-20 zoom-effect" style="background-image: url('images/proj_3.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://github.com/shibam20031/AluminiRegistrationPrototype/blob/main/index.html">Online Voting Systen prototype</a></h3>
+                <p>Designed for admin and user to interact to give their important vote to the candidate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <br>
+    </section>
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate section-reveal">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Below are the details to reach out to me!</p>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5 section-reveal">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-map-signs"></span>
+              </div>
+              <h3 class="mb-4">Address</h3>
+              <p>Barrackpore, India</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-phone2"></span>
+              </div>
+              <h3 class="mb-4">Contact Number</h3>
+              <p><a href="tel://0101010101">+91 7432079728 </a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-paper-plane"></span>
+              </div>
+              <h3 class="mb-4">Email Address</h3>
+              <p><a href="mailto:info@yoursite.com">shibamandal2003@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-globe"></span>
+              </div>
+              <h3 class="mb-4">Download Resume</h3>
+              <p><a href="CV_SHIBAM.pdf">resumelink</a></p>
+            </div>
+          </div>
+
+          <div class="container section-reveal">
+            <br>
+            <br>
+            <div class="row justify-content-center">
+              <div class="col-md-7 ftco-animate text-center">
+                <h2>Have a<span> Question?  </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLScvrBjK1BlLmXKH6F9Blvc4DBHJ6c-5XsmkLvEejSwC6OBzQA/viewform?usp=dialog" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+              </div>
+            </div>
+              <br>
+                <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+                  <li class="ftco-animate normal-txt">Find me on  </li>
+                  <li class="ftco-animate"><a href="https://www.linkedin.com/in/ShibamMondal/"><span class="icon-linkedin"></span></a></li>  
+                  <li class="ftco-animate"><a href="https://www.facebook.com/shibam.mondal.9469"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.instagram.com/shibammandel/"><span class="icon-instagram"></span></a></li>
+                </ul>
+              <br>
+           </div>
+       </div>
+     </section>
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Shibam Mondal</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+    <!-- Particle JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    
+    <script src="js/main.js"></script>
+    
+    <script>
+      // Custom cursor
+      const cursor = document.querySelector('.cursor');
+      const cursorFollower = document.querySelector('.cursor-follower');
+      
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+          cursorFollower.style.left = e.clientX + 'px';
+          cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+      });
+      
+      // Add hover effect to links
+      const hoverElements = document.querySelectorAll('a, button, .zoom-effect, .resume-wrap, .box');
+      
+      hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+          cursor.style.background = 'rgba(255, 189, 57, 0.8)';
+          cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+          cursor.style.background = 'rgba(255, 189, 57, 0.5)';
+          cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+      });
+      
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Particle JS initialization
+      particlesJS('particles-js', {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffbd39"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffbd39",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+      
+      // Scroll reveal animation
+      function scrollReveal() {
+        const sections = document.querySelectorAll('.section-reveal');
+        
+        sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (sectionTop < windowHeight - 100) {
+            section.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', scrollReveal);
+      window.addEventListener('load', scrollReveal);
+      
+      // Back to top button
+      const backToTopButton = document.getElementById('back-to-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.style.opacity = '1';
+          backToTopButton.style.visibility = 'visible';
+        } else {
+          backToTopButton.style.opacity = '0';
+          backToTopButton.style.visibility = 'hidden';
+        }
+      });
+      
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Animate progress bars on scroll
+      function animateProgressBars() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        progressBars.forEach(bar => {
+          const width = bar.getAttribute('aria-valuenow');
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width + '%';
+          }, 100);
+        });
+      }
+      
+      // Intersection Observer for progress bars
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateProgressBars();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      const skillsSection = document.querySelector('.skill-mf');
+      if (skillsSection) {
+        observer.observe(skillsSection);
+      }
+    </script>
+  </body>
+</html>
